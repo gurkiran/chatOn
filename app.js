@@ -8,11 +8,9 @@ app.set('view engine','jade');
 
 app.use(express.static('./public'));
 
-// app.get('/', (req, res) => {
-//   res.end('Hello world !');
-// })
 
-app.get('/home', (req, res) => {
+
+app.get('/', (req, res) => {
   res.render('index',{title :'Chat'});
 })
 
