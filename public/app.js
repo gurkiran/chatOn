@@ -25,7 +25,12 @@ $(function(){
 
   socket.on('new message', function(data) {
     console.log(data);
-    chat.append('<div class="well"><strong>'+data.user.username+' <code>('+data.user.age+'/'+data.user.gender+')</code></strong>:<i> '+data.msg+'</i></div>');
+    if(data.user.gender === 'M'){
+        chat.append('<div class="well"><i class="fa fa-mars" aria-hidden="true"></i> <strong>'+data.user.username+' <code>('+data.user.age+')</code></strong>:<i> '+data.msg+'</i></div>');
+    }else {
+      chat.append('<div class="well"><i class="fa fa-venus" aria-hidden="true"></i> <strong>'+data.user.username+' <code>('+data.user.age+')</code></strong>:<i> '+data.msg+'</i></div>');
+    }
+
   })
 
   userForm.submit(function(e){
@@ -55,7 +60,13 @@ $(function(){
     var html = '';
     console.log(data);
     for(var i=0; i < data.length; i++) {
-      html += '<li class="list-group-item">'+data[i].username+'<strong> <code>('+data[i].age+'/'+data[i].gender+ ')</code></strong></li>';
+
+      if(data[i].gender === 'M'){
+        html += '<li class="list-group-item"><i class="fa fa-mars" aria-hidden="true"></i> '+data[i].username+'<strong> <code>('+data[i].age+')</code></strong></li>';
+      }else{
+          html += '<li class="list-group-item"><i class="fa fa-venus" aria-hidden="true"></i> '+data[i].username+'<strong> <code>('+data[i].age+')</code></strong></li>';
+      }
+
     }
     users.html(html);
   })
