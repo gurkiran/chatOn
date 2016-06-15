@@ -3,12 +3,32 @@ html
   head
     title=title
     link(rel='stylesheet', href='/style.css', type='text/css')
+    script(src="https://code.jquery.com/jquery-3.0.0.min.js")
+    link(rel='stylesheet' , href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', type='text/css')
   body
-    .site-wrap
-      .chat-list
-        ul
-      .chat-form
-        input(type='text', placeholder='message')
-    
+    .container
+      .row#userFormArea
+        .col-md-12
+          form#userForm
+            .form-group
+              label Enter Username
+              input(class='form-control', id='username')
+              br
+              input(type='submit',class='btn btn-primary', value='Login')
+
+      .row#messageArea
+        .col-md-4
+          .well
+            h3 Online users 
+            ul#users.list-group
+        .col-md-8
+          .chat#chat
+          form#messageForm
+            .form-group
+              label Enter Message
+              textarea.form-control#message
+              br
+              input(type='submit',class='btn btn-primary', value='Send message')
+
     script(src='/socket.io/socket.io.js')
     script(src='/app.js')
