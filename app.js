@@ -9,6 +9,8 @@ const io = socketIo(server);
 
 const users = [];
 const connections =[];
+const age = [];
+const gender = [];
 
 app.set('view engine','jade');
 
@@ -27,6 +29,7 @@ io.sockets.on('connection', (socket)=> {
 
   socket.on('disconnect', (data)=> {
     users.splice(users.indexOf(socket.username), 1);
+    age.splice(age.indexOf(socket.age), 1);
     updateUsernames();
     connections.splice(connections.indexOf(socket), 1);
     console.log('connnected: '+ connections.length);
@@ -34,24 +37,25 @@ io.sockets.on('connection', (socket)=> {
   // send message
   socket.on('send message', (data) => {
     console.log(data);
-  io.sockets.emit('new message', {msg: data, user:socket.username});
+  io.sockets.emit('new message', {msg: data, user:socket.username, age:socket.age, gender:socket.gender});
   })
 
-  socket.on('new message', (data, callback) => {
+  socket.on('new user', (data, callback) => {
     callback(true);
     socket.username =data;
+    socket.age=data;
+    socket.gender=data;
     users.push(socket.username);
+    age.push(socket.age);
+    gender.push(socket.gender);
     updateUsernames();
   })
 
   function updateUsernames() {
-    io.sockets.emit('get users', users)
+    io.sockets.emit('get users', users, age, gender)
   }
 
 })
-
-
-
 
 
 const port = process.env.PORT || 3000;

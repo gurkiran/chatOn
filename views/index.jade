@@ -5,6 +5,7 @@ html
     link(rel='stylesheet', href='/style.css', type='text/css')
     script(src="https://code.jquery.com/jquery-3.0.0.min.js")
     link(rel='stylesheet' , href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', type='text/css')
+    link(rel='stylesheet' , href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', type='text/css')
   body
     .container
       .row#userFormArea
@@ -13,6 +14,12 @@ html
             .form-group
               label Enter Username
               input(class='form-control', id='username')
+              label Enter Age
+              input(class='form-control', id='age', type='number')
+              label Gender
+              select.form-control#gender
+                option M
+                option F
               br
               input(type='submit',class='btn btn-primary', value='Login')
 
