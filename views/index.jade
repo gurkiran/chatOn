@@ -9,24 +9,28 @@ html
   body
     .container
       .row#userFormArea
-        .col-md-12
+        .col-md-6.col-md-offset-3
           form#userForm
             .form-group
               label Enter Username
-              input(class='form-control', id='username')
+              input(class='form-control', id='username' required)
+              br
               label Enter Age
-              input(class='form-control', id='age', type='number')
+              input(class='form-control', id='age', type='number' required)
+              br
               label Gender
               select.form-control#gender
+                option(selected,disabled) Select
                 option M
                 option F
               br
-              input(type='submit',class='btn btn-primary', value='Login')
+              input(type='submit',class='btn btn-primary btn-lg', value='Chat')
 
       .row#messageArea
         .col-md-4
           .well
-            h3 Online users 
+            h3 Online users
+              span   (3)
             ul#users.list-group
         .col-md-8
           .chat#chat
@@ -36,6 +40,7 @@ html
               textarea.form-control#message
               br
               input(type='submit',class='btn btn-primary', value='Send message')
+
 
     script(src='/socket.io/socket.io.js')
     script(src='/app.js')

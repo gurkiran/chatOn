@@ -12,9 +12,7 @@ $(function(){
   var username = $('#username');
   var age = $('#age');
   var gender = $('#gender');
-
-
-
+  var numberOfUsers= $('.well h3>span');
 
   messageForm.submit(function(e){
     e.preventDefault();
@@ -32,28 +30,33 @@ $(function(){
   })
 
   userForm.submit(function(e){
-
-    var userName = username.val();
-    var userAge = age.val();
-    var userGender = gender.val();
-    var credentials = {
-      username:userName,
-      age: userAge,
-      gender: userGender
-    }
-    e.preventDefault();
-    socket.emit('new user', credentials, function(data) {
-      if(data) {
-        userFormArea.hide();
-        messageArea.show();
+    if($( "#gender option:selected" ).text() != 'Select') {
+      var userName = username.val();
+      var userAge = age.val();
+      var userGender = gender.val();
+      var credentials = {
+        username:userName,
+        age: userAge,
+        gender: userGender
       }
-    });
-    username.val('');
-    age.val('');
+      e.preventDefault();
+      socket.emit('new user', credentials, function(data) {
+        if(data) {
+          userFormArea.hide();
+          messageArea.show();
+        }
+      });
+      username.val('');
+      age.val('');
+    }else {
+      alert('hanji kiddan ?');
+    }
+
   })
 
   socket.on('get users', function(data) {
     var html = '';
+    numberOfUsers[0].innerHTML= ' ( '+data.length+' )';
     for(var i=0; i < data.length; i++) {
 
       if(data[i].gender === 'M'){

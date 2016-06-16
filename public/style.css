@@ -1,6 +1,28 @@
+body {
+  background: #D38312;
+  background: -webkit-linear-gradient(to left, #D38312 , #A83279);
+  background: linear-gradient(to left, #D38312 , #A83279);
+}
+
 .container {
   margin-top: 30px;
+  height: 50%;
 }
 #messageArea {
   display: none;
+}
+
+label {
+  color: white;
+  font-size: 20px;
+  font-family: cursive;
+}
+
+#username,#age,#gender {
+  background: f7f2f2;
+  color: black;
+}
+
+.well h3 {
+  padding-right: 10px;
 }
