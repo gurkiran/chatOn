@@ -24,9 +24,9 @@ $(function(){
 
   socket.on('new message', function(data) {
     if(data.user.gender === 'M'){
-        chat.append('<div class="well"><i class="fa fa-mars" aria-hidden="true"></i> <strong>'+data.user.username+' <code>('+data.user.age+')</code></strong>:<i> '+data.msg+'</i></div>');
+        chat.append('<div class="well"><i class="fa fa-mars" aria-hidden="true"></i> <strong>'+data.user.username+'</strong>:<i style="color:blue"> '+data.msg+'</i></div>');
     }else {
-      chat.append('<div class="well"><i class="fa fa-venus" aria-hidden="true"></i> <strong>'+data.user.username+' <code>('+data.user.age+')</code></strong>:<i> '+data.msg+'</i></div>');
+      chat.append('<div class="well"><i class="fa fa-venus" aria-hidden="true"></i> <strong>'+data.user.username+'</strong>:<i style="color:#db0a53"> '+data.msg+'</i></div>');
     }
 
   })
