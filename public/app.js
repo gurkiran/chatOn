@@ -33,9 +33,9 @@ $(function(){
   socket.on('new message', function(data) {
     if(data.user.gender === 'M'){
 
-        chat.append('<div class="well"><i class="fa fa-mars" aria-hidden="true"></i> <strong>'+data.user.username+'</strong>:<i style="color:blue"> '+data.msg+'</i></div>');
+        chat.prepend('<div class="well chatBox"><i class="fa fa-mars" aria-hidden="true"></i> <strong>'+data.user.username+'</strong>:<i style="color:#337AB7"> '+data.msg+'</i></div>');
     }else {
-      chat.append('<div class="well"><i class="fa fa-venus" aria-hidden="true"></i> <strong>'+data.user.username+'</strong>:<i style="color:#db0a53"> '+data.msg+'</i></div>');
+      chat.prepend('<div class="well chatbox"><i class="fa fa-venus" aria-hidden="true"></i> <strong>'+data.user.username+'</strong>:<i style="color:#F29EC8"> '+data.msg+'</i></div>');
     }
 
   })
@@ -55,6 +55,7 @@ $(function(){
         if(data) {
           userFormArea.hide();
           messageArea.show();
+          messageForm.show();
         }
       });
       username.val('');
@@ -71,9 +72,9 @@ $(function(){
     for(var i=0; i < data.length; i++) {
 
       if(data[i].gender === 'M'){
-        html += '<li class="list-group-item"><i class="fa fa-mars" aria-hidden="true"></i> '+data[i].username+'<strong> <code>('+data[i].age+')</code></strong></li>';
+        html += '<li class="list-group-item male"><i class="fa fa-mars" aria-hidden="true"></i> '+data[i].username+'<strong> <em>('+data[i].age+')</em></strong></li>';
       }else{
-          html += '<li class="list-group-item"><i class="fa fa-venus" aria-hidden="true"></i> '+data[i].username+'<strong> <code>('+data[i].age+')</code></strong></li>';
+          html += '<li class="list-group-item female"><i class="fa fa-venus" aria-hidden="true"></i> '+data[i].username+'<strong> <em>('+data[i].age+')</em></strong></li>';
       }
 
     }

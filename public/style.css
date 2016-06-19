@@ -1,12 +1,29 @@
 body {
-  background: #D38312;
-  background: -webkit-linear-gradient(to left, #D38312 , #A83279);
-  background: linear-gradient(to left, #D38312 , #A83279);
+  background-image: url('http://citationgurus.com/wp-content/uploads/2014/11/backgrounds-background-hd-wallpaper-02-download-widescreen-high-resolution-wallpaper.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 
 .container {
+  position: relative;
   margin-top: 30px;
-  height: 50%;
+
 }
 #messageArea {
   display: none;
@@ -14,8 +31,8 @@ body {
 }
 
 label {
-  color: white;
-  font-size: 20px;
+  color: #efeaea;
+  font-size: 15px;
   font-family: cursive;
 }
 
@@ -24,15 +41,48 @@ label {
   color: black;
 }
 
-.well h3 {
+.well.online {
+  background-color: transparent;
+  border: none;
+}
+.well.online h3 {
+  color: antiquewhite;
   padding-right: 10px;
+
 }
 
+.well.chatBox:nth-child(even) {
+  text-align: right;
+}
+
+.well.chatBox {
+  padding: 5px;
+  margin-bottom: 40px;
+  background-color:transparent;
+  color: white;
+  outline: none;
+}
 #fixed {
   position: fixed;
+  height: 450px;
+  overflow-y:scroll;
+
 }
 
 #chatZone {
   position: relative;
-  left: 40%;
+  left: 30%;
+}
+
+#messageForm {
+  display: none;
+  position: fixed;
+  bottom: 0;
+}
+
+.list-group-item.male {
+  background-color: #337AB7;
+}
+.list-group-item.female {
+  background-color: #F29EC8;
 }
