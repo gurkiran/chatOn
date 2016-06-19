@@ -10,6 +10,7 @@ body {
 }
 #messageArea {
   display: none;
+  position: relative;
 }
 
 label {
@@ -25,4 +26,13 @@ label {
 
 .well h3 {
   padding-right: 10px;
+}
+
+#fixed {
+  position: fixed;
+}
+
+#chatZone {
+  position: relative;
+  left: 40%;
 }
