@@ -33,9 +33,9 @@ $(function(){
   socket.on('new message', function(data) {
     if(data.user.gender === 'M'){
 
-        chat.prepend('<div class="well chatBox"><i class="fa fa-mars" aria-hidden="true"></i> <code>'+data.user.username+'</code>:<strong style="color:#337AB7;font-size:20px"> '+data.msg+'</strong></div>');
+        chat.prepend('<div class="well chatBox"><i class="fa fa-mars" aria-hidden="true"></i> <code>'+data.user.username+'</code><strong style="color:#337AB7;font-size:20px"> '+data.msg+'</strong></div>');
     }else {
-      chat.prepend('<div class="well chatbox"><i class="fa fa-venus" aria-hidden="true"></i> <code>'+data.user.username+'</code>:<strong style="color:#F29EC8";font-size:20px> '+data.msg+'</strong></div>');
+      chat.prepend('<div class="well chatbox"><i class="fa fa-venus" aria-hidden="true"></i> <code>'+data.user.username+'</code><strong style="color:#F29EC8";font-size:20px> '+data.msg+'</strong></div>');
     }
 
   })
