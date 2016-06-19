@@ -37,7 +37,7 @@ label {
 }
 
 #username,#age,#gender {
-  background: f7f2f2;
+  background: #b0b0b0;
   color: black;
 }
 
@@ -49,6 +49,11 @@ label {
   color: antiquewhite;
   padding-right: 10px;
 
+}
+.well.online h3 span {
+  margin-left: 20px;
+  font-size: 25px;
+  color: #93B874;
 }
 
 .well.chatBox:nth-child(even) {

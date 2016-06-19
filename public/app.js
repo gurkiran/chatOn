@@ -68,7 +68,7 @@ $(function(){
 
   socket.on('get users', function(data) {
     var html = '';
-    numberOfUsers[0].innerHTML= ' ( '+data.length+' )';
+    numberOfUsers[0].innerHTML= '     '+data.length+'';
     for(var i=0; i < data.length; i++) {
 
       if(data[i].gender === 'M'){
