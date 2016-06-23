@@ -34,7 +34,7 @@ io.sockets.on('connection', (socket)=> {
     connections.splice(connections.indexOf(socket), 1);
     console.log('connnected: '+ connections.length);
   })
-  // send message
+  // Send message
   socket.on('send message', (data) => {
   io.sockets.emit('new message', {msg: data, user:socket.username, age:socket.age, gender:socket.gender});
   })
