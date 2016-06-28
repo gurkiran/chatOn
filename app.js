@@ -11,6 +11,7 @@ const users = [];
 const connections =[];
 const age = [];
 const gender = [];
+const location =[];
 
 app.set('view engine','jade');
 
@@ -36,7 +37,7 @@ io.sockets.on('connection', (socket)=> {
   })
   // Send message
   socket.on('send message', (data) => {
-  io.sockets.emit('new message', {msg: data, user:socket.username, age:socket.age, gender:socket.gender});
+  io.sockets.emit('new message', {msg: data, user:socket.username, age:socket.age, gender:socket.gender, location:socket.location});
   })
 
   socket.on('new user', (data, callback) => {
@@ -44,14 +45,16 @@ io.sockets.on('connection', (socket)=> {
     socket.username =data;
     socket.age=data;
     socket.gender=data;
+    socket.location=data;
     users.push(socket.username);
     age.push(socket.age);
     gender.push(socket.gender);
+    location.push(socket.location);
     updateUsernames();
   })
 
   function updateUsernames() {
-    io.sockets.emit('get users', users, age, gender)
+    io.sockets.emit('get users', users, age, gender, location)
   }
 
 })

@@ -91,3 +91,8 @@ label {
 .list-group-item.female {
   background-color: #F29EC8;
 }
+
+#location {
+  float: right;
+  color: #f7e32e;
+}
