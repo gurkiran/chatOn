@@ -27,7 +27,7 @@ $(function(){
     var lng = position.coords.longitude;
     $.get('https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lng+'&key=AIzaSyCaTbaq-KfJy-Qq_jdY9Yo5yLAjqdCrdG0', function(data){
       console.log(data);
-      location = data.results[6].address_components[0].long_name;
+      location = data.results[5].address_components[0].short_name;
     })
   }
 
