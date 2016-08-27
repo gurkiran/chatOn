@@ -4,6 +4,7 @@ html
     title=title
     meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=yes')
     link(rel='stylesheet', href='/style.css', type='text/css')
+    script(src='https://www.google.com/recaptcha/api.js')
     script(src="https://code.jquery.com/jquery-3.0.0.min.js")
     link(rel='stylesheet' , href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', type='text/css')
     link(rel='stylesheet' , href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', type='text/css')
@@ -24,6 +25,8 @@ html
                 option(selected,disabled) Select
                 option M
                 option F
+              br
+              .g-recaptcha(data-sitekey='6LcoiSgTAAAAAKxVnt5AwS5z-1ii6TDo86FyYSCL')
               br
               input(type='submit',class='btn btn-primary btn-lg btn-block', value='Chat')
 

@@ -3,8 +3,11 @@
   <head>
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css"/>
     <link rel="stylesheet" href="/style.css" type="text/css"/>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css"/>
   </head>
   <body>
     <div class="container">
@@ -22,6 +25,7 @@
                 <option>M</option>
                 <option>F</option>
               </select><br/>
+              <div data-sitekey="6LcoiSgTAAAAAKxVnt5AwS5z-1ii6TDo86FyYSCL" class="g-recaptcha"></div><br/>
               <input type="submit" value="Chat" class="btn btn-primary btn-lg btn-block"/>
             </div>
           </form>
@@ -46,7 +50,6 @@
         </div>
       </form>
     </div>
-      <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/app.js"></script>
   </body>
