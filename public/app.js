@@ -14,6 +14,7 @@ $(function(){
   var gender = $('#gender');
   var numberOfUsers= $('.well h3>span');
   var location = null;
+  var gCaptcha = $('.g-recaptcha');
 
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -59,15 +60,16 @@ $(function(){
       var userName = username.val();
       var userAge = age.val();
       var userGender = gender.val();
+      var captcha = gCaptcha.val();
       var credentials = {
         username:userName,
         age: userAge,
         gender: userGender,
-        location: location
+        location: location,
+        verifyCode: captcha
       }
       e.preventDefault();
       socket.emit('new user', credentials, function(data) {
-        console.log(data);
         if(data) {
           userFormArea.hide();
           messageArea.show();

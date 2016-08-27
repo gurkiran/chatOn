@@ -23,7 +23,6 @@ app.get('/', (req, res) => {
   res.render('index',{title :'Chat'});
 })
 
-
 io.sockets.on('connection', (socket)=> {
   connections.push(socket);
   console.log('connnected: '+ connections.length);
@@ -61,7 +60,7 @@ io.sockets.on('connection', (socket)=> {
 })
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 server.listen(port, () => {
   console.log(`server started on port ${port}`);
 });
