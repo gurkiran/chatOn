@@ -67,6 +67,7 @@ $(function(){
       }
       e.preventDefault();
       socket.emit('new user', credentials, function(data) {
+        console.log(data);
         if(data) {
           userFormArea.hide();
           messageArea.show();

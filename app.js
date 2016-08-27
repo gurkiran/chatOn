@@ -41,6 +41,7 @@ io.sockets.on('connection', (socket)=> {
   })
 
   socket.on('new user', (data, callback) => {
+    console.log(data);
     callback(true);
     socket.username =data;
     socket.age=data;
